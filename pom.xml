@@ -88,6 +88,13 @@
     </repository>
   </repositories>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>github--Forsakringskassan--repository</id>
+            <url>https://maven.pkg.github.com/Forsakringskassan/repository</url>
+        </pluginRepository>
+    </pluginRepositories>
+
   <build>
     <plugins>
       <plugin>
