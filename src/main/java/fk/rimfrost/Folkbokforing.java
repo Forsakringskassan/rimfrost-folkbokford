@@ -16,7 +16,9 @@ public class Folkbokforing implements FolkbokforingControllerApi
    private static final Logger log = LoggerFactory.getLogger(Folkbokforing.class);
 
    @Override
-   public FolkbokforingPersnrGet200Response folkbokforingPersnrGet(@PathParam("persnr")@Pattern(regexp = "^\\d{8}-\\d{4}$") String personnummer) {
+   public FolkbokforingPersnrGet200Response folkbokforingPersnrGet(
+         @PathParam("persnr") @Pattern(regexp = "^\\d{8}-\\d{4}$") String personnummer)
+   {
       log.info("Folkbokforing received request: personnummer={}", personnummer);
       var response = new FolkbokforingPersnrGet200Response();
       String lastFour = personnummer.substring(personnummer.length() - 4);
