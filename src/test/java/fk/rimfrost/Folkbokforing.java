@@ -5,16 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
-class PopulationRegistrationTest
+class FolkbokforingTest
 {
    @Test
-   void testPopulationRegistrationTrue()
+   void testFolkbokforingTrue()
    {
       String actualResponse = given()
-            .when().get("/population_registration/1234")
+            .when().get("/folkbokforing/1234")
             .then()
             .statusCode(200)
             .extract()
@@ -27,10 +26,10 @@ class PopulationRegistrationTest
    }
 
    @Test
-   void testPopulationRegistrationFalse()
+   void testFolkbokforingFalse()
    {
       String actualResponse = given()
-            .when().get("/population_registration/19999")
+            .when().get("/folkbokforing/19999")
             .then()
             .statusCode(200)
             .extract()

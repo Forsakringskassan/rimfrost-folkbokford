@@ -37,14 +37,14 @@ The application, packaged as an _über-jar_, is now runnable using `java -jar ta
 
 ## Packaging and running as docker
 
-Build a docker image _rimfrost/masterdata/population_registration:latest_ :
+Build a docker image _rimfrost/masterdata/folkbokforing:latest_ :
 ```shell script
 ./mvnw clean package
 ```
 Launch container:
 
 ```shell script
-docker run -p 8080:8080 rimfrost/masterdata/population_registration
+docker run -p 8080:8080 rimfrost/masterdata/folkbokforing
 ```
 
 ## Creating a native executable
@@ -69,7 +69,7 @@ If you want to learn more about building native executables, please consult <htt
 
 ### REST
 
-Service returns true on http://localhost:8080/population_registration/{social_security_nr} <br>
+Service returns true on http://localhost:8080/folkbokforing/{persnr} <br>
 for all social security numbers, with one exception: <br>
 Social security numbers ending with "9999" will return false
 
