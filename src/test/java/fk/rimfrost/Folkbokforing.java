@@ -1,4 +1,4 @@
-package fk.rimfrost;
+package se.fk.github.rimfrost.folkbokford;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package fk.rimfrost;
+package se.fk.github.rimfrost.folkbokford;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.validation.constraints.Pattern;
@@ -27,3 +27,4 @@ public class Folkbokforing implements FolkbokforingControllerApi
       return response;
    }
 }
+ 
