@@ -1,4 +1,4 @@
-package fk.rimfrost;
+package se.fk.github.rimfrost.folkbokford;
 
 import jakarta.ws.rs.GET;
 import jakarta.enterprise.context.ApplicationScoped;
