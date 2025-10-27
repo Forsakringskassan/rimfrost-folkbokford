@@ -27,4 +27,3 @@ public class Folkbokforing implements FolkbokforingControllerApi
       return response;
    }
 }
- 
