@@ -21,8 +21,8 @@ public class Folkbokforing implements FolkbokforingControllerApi
    {
       log.info("Folkbokforing received request: personnummer={}", personnummer);
       var response = new FolkbokforingPersnrGet200Response();
-      String lastFour = personnummer.substring(personnummer.length() - 4);
-      response.setResult(!lastFour.equals("9999"));
+      String secondToLastDigit = personnummer.substring(personnummer.length() - 2, personnummer.length() - 1);
+      response.setResult(!secondToLastDigit.equals("9"));
       log.info("Folkbokforing sending response: {}", response);
       return response;
    }
