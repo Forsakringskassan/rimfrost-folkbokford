@@ -1,10 +1,10 @@
 package se.fk.github.rimfrost.folkbokford;
 
-import io.quarkus.test.junit.QuarkusTest;
+import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 
+import io.quarkus.test.junit.QuarkusTest;
 import static io.restassured.RestAssured.given;
-import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
 class FolkbokforingTest
