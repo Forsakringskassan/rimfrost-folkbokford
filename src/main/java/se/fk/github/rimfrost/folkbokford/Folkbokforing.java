@@ -5,7 +5,10 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import se.fk.rimfrost.api.folkbokforing.jaxrsspec.controllers.generatedsource.FolkbokforingControllerApi;
+import se.fk.rimfrost.api.folkbokforing.jaxrsspec.controllers.generatedsource.model.Adress;
 import se.fk.rimfrost.api.folkbokforing.jaxrsspec.controllers.generatedsource.model.FolkbokforingPersnrGet200Response;
+import se.fk.rimfrost.api.folkbokforing.jaxrsspec.controllers.generatedsource.model.Kon;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,8 +24,19 @@ public class Folkbokforing implements FolkbokforingControllerApi
    {
       log.info("Folkbokforing received request: personnummer={}", personnummer);
       var response = new FolkbokforingPersnrGet200Response();
-      String secondToLastDigit = personnummer.substring(personnummer.length() - 2, personnummer.length() - 1);
-      response.setResult(!secondToLastDigit.equals("9"));
+
+      response.setId(personnummer);
+      response.setFornamn("Lisa");
+      response.setEfternamn("Tass");
+      response.setKon(Kon.K);
+
+      var adress = new Adress();
+      adress.setCareOf("C/o Andersson");
+      adress.setPostnummer("12345");
+      adress.setPostort("Luleå");
+      adress.setUtdelningsadress("Försäkringsgatan 137");
+
+      response.setAdress(adress);
       log.info("Folkbokforing sending response: {}", response);
       return response;
    }
