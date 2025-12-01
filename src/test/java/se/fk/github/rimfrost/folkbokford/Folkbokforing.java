@@ -10,10 +10,10 @@ import static io.restassured.RestAssured.given;
 class FolkbokforingTest
 {
    @Test
-   void testFolkbokforingTrue()
+   void testFolkbokforing()
    {
       String actualResponse = given()
-            .when().get("/folkbokforing/1234")
+            .when().get("/folkbokforing/19900716-1234")
             .then()
             .statusCode(200)
             .extract()
@@ -21,24 +21,19 @@ class FolkbokforingTest
             .asString();
 
       assertThat(actualResponse).isEqualToIgnoringWhitespace("""
-            {"result":true}
-            """);
-   }
-
-   @Test
-   void testFolkbokforingFalse()
-   {
-      String actualResponse = given()
-            .when().get("/folkbokforing/19999")
-            .then()
-            .statusCode(200)
-            .extract()
-            .body()
-            .asString();
-
-      assertThat(actualResponse).isEqualToIgnoringWhitespace("""
-            {"result":false}
-            """);
+                        {
+              "id": "19900716-1234",
+              "fornamn": "Lisa",
+              "efternamn": "Tass",
+              "kon": "K",
+              "adress": {
+                "careOf": "C/o Andersson",
+                "utdelningsadress": "Försäkringsgatan 137",
+                "postnummer": "12345",
+                "postort": "Luleå"
+              }
+            }
+                        """);
    }
 
 }
